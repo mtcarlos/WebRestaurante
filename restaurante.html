@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante - La Esencia</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --clr-primary: #002349;
+      --clr-accent: #957C3D;
+      --clr-light: #f5f5f5;
+      --clr-white: #ffffff;
+      --radius: 8px;
+      --space: 1.5rem;
+    }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--clr-light);
+      color: var(--clr-primary);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Hero dinámico */
+    .restaurant-hero {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+      color: var(--clr-white);
+      text-align: center;
+      padding: 6rem 1rem;
+      overflow: hidden;
+    }
+    .restaurant-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .restaurant-hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: var(--space);
+      margin-top: var(--space);
+    }
+    .hero-icons .icon {
+      background: var(--clr-white);
+      color: var(--clr-primary);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .hero-icons .icon:nth-child(1) { animation-delay: 0.2s; }
+    .hero-icons .icon:nth-child(2) { animation-delay: 0.4s; }
+    .hero-icons .icon:nth-child(3) { animation-delay: 0.6s; }
+    .hero-icons .icon:nth-child(4) { animation-delay: 0.8s; }
+
+    /* Contenedor principal */
+    .restaurant-section {
+      max-width: 1000px;
+      background: var(--clr-white);
+      margin: -4rem auto 2rem;
+      padding: var(--space);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(0, 35, 73, 0.1);
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out both;
+    }
+    @media (max-width: 768px) {
+      .restaurant-section { margin: 2rem auto; }
+    }
+    /* Nuestra Carta */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--space);
+      margin-bottom: var(--space);
+    }
+    .menu-tabs button {
+      background: var(--clr-white);
+      border: 2px solid var(--clr-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      color: #002349;
+      
+    }
+    .menu-tabs button.active,
+    .menu-tabs button:hover {
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+    .menu-content {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space);
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    .menu-content.active { display: grid; }
+    .dish-card {
+      background: var(--clr-white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      text-align: center;
+    }
+    .dish-card img {
+      width: 100%; height: 150px; object-fit: cover;
+    }
+    .dish-card .info { padding: 0.75rem; }
+    .dish-card h3 { margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+    .dish-card p { font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; }
+    .dish-card .price { font-weight: 600; color: var(--clr-accent); }
+
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space);
+      margin-bottom: var(--space);
+      animation: fadeInUp 1s ease-out both;
+    }
+    .gallery img {
+      width: 100%; border-radius: var(--radius);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Horarios y Ubicación */
+    .hours-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space);
+      align-items: start;
+      animation: fadeInUp 1.2s ease-out both;
+    }
+    .hours-card {
+      background: var(--clr-white);
+      padding: var(--space);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    .hours-card ul { list-style: none; padding: 0; }
+    .hours-card li { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1.4s ease-out both;
+    }
+    .map-container iframe { width: 100%; height: 250px; border: 0; }
+
+    footer {
+      text-align: center;
+      padding: var(--space) 0;
+      background: var(--clr-primary);
+      color: var(--clr-white);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">La Esencia</a>
+        <ul class="nav-links">
+          <li><a href="hostal.html">Hostal</a></li>
+          <li><a href="restaurante.html">Restaurante</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero dinámico con iconos -->
+  <section class="restaurant-hero">
+    <h1>Restaurante</h1>
+    <p>Degusta platos tradicionales y contemporáneos en un ambiente acogedor y elegante.</p>
+    <div class="hero-icons">
+      <div class="icon"><i class="material-icons">restaurant_menu</i></div>
+      <div class="icon"><i class="material-icons">photo_library</i></div>
+    </div>
+  </section>
+
+  <!-- Contenedor principal -->
+  <div class="restaurant-section">
+    <!-- Nuestra Carta -->
+    <section>
+      <h2>Nuestra Carta</h2>
+      <div class="menu-tabs">
+        <button class="active" data-target="entrantes">Entrantes</button>
+        <button data-target="principales">Principales</button>
+        <button data-target="postres">Postres</button>
+      </div>
+      <div id="entrantes" class="menu-content active">
+        <div class="dish-card"><img src="entrante1.jpg" alt="Ensalada fresca"><div class="info"><h3>Ensalada Fresca</h3><p>Mezcla de lechugas, frutos rojos y queso de cabra.</p><div class="price">8,50€</div></div></div>
+        <div class="dish-card"><img src="entrante2.jpg" alt="Croquetas de jamón"><div class="info"><h3>Croquetas de Jamón</h3><p>Croquetas caseras servidas con alioli.</p><div class="price">7,00€</div></div></div>
+      </div>
+      <div id="principales" class="menu-content">
+        <div class="dish-card"><img src="principal1.jpg" alt="Solomillo a la plancha"><div class="info"><h3>Solomillo a la Plancha</h3><p>Acompañado de verduras salteadas.</p><div class="price">16,00€</div></div></div>
+        <div class="dish-card"><img src="principal2.jpg" alt="Arroz meloso de marisco"><div class="info"><h3>Arroz Meloso de Marisco</h3><p>Arroz cremoso con gambas y calamares.</p><div class="price">14,50€</div></div></div>
+      </div>
+      <div id="postres" class="menu-content">
+        <div class="dish-card"><img src="postre1.jpg" alt="Tarta de queso"><div class="info"><h3>Tarta de Queso</h3><p>Con base de galleta y coulis de frutos rojos.</p><div class="price">6,00€</div></div></div>
+        <div class="dish-card"><img src="postre2.jpg" alt="Helado artesanal"><div class="info"><h3>Helado Artesanal</h3><p>Variedad de sabores locales.</p><div class="price">5,50€</div></div></div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section>
+      <h2>Galería</h2>
+      <div class="gallery">
+        <img src="restaurante1.jpg" alt="Entrada gourmet">
+        <img src="restaurante2.jpg" alt="Salón del restaurante">
+        <img src="restaurante3.jpg" alt="Postre especial">
+        <img src="restaurante4.jpg" alt="Mesa preparada">
+      </div>
+    </section>
+
+    <!-- Horarios y Ubicación -->
+    
+  </div>
+
+  <footer>
+    <div class="container"><p>&copy; 2025 La Esencia. Todos los derechos reservados.</p></div>
+  </footer>
+
+  <script>
+    // Activación de pestañas
+    const tabs = document.querySelectorAll('.menu-tabs button');
+    const contents = document.querySelectorAll('.menu-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Esencia - Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --clr-primary: #002349;
+      --clr-accent: #957C3D;
+      --clr-light: #f5f5f5;
+      --clr-white: #ffffff;
+      --radius: 8px;
+      --space: 1.5rem;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
+    /* Hero dinámico */
+    .index-hero {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+      color: var(--clr-white);
+      text-align: center;
+      padding: 6rem 1rem;
+      overflow: hidden;
+    }
+    .index-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .index-hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out both;
+    }
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: var(--space);
+      margin-top: var(--space);
+    }
+    .hero-icons .icon {
+      background: var(--clr-white);
+      color: var(--clr-primary);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+
+    .hero-icons .icon:nth-child(1) { animation-delay: 0.2s; }
+    .hero-icons .icon:nth-child(2) { animation-delay: 0.4s; }
+    .hero-icons .icon:nth-child(3) { animation-delay: 0.6s; }
+    .hero-icons .icon:nth-child(4) { animation-delay: 0.8s; }
+    /* Sección flotante */
+    .index-section {
+      max-width: 1000px;
+      background: var(--clr-white);
+      margin: -4rem auto 2rem;
+      padding: var(--space);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(0, 35, 73, 0.1);
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out both;
+    }
+    /* CTA-buttons animadas */
+    .cta-buttons {
+      display: inline-flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: var(--space);
+      animation: fadeInUp 1.2s ease-out both;
+    }
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--clr-accent);
+      color: var(--clr-white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+    .icon-btn:hover {
+      transform: translateY(-4px);
+    }
+    .icon-btn i { font-size: 36px; }
+    /* Overview cards animadas */
+    .overview .cards {
+      display: grid;
+      gap: var(--space);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      animation: fadeInUp 1.4s ease-out both;
+    }
+    .overview .card {
+      background: var(--clr-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 35, 73, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .overview .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0, 35, 73, 0.1);
+    }
+    .overview .card img { width: 100%; height: 200px; object-fit: cover; }
+    .overview .card h2 { margin: var(--space) 0 0.5rem; color: var(--clr-primary); font-family: 'Playfair Display', serif; }
+    .overview .card p { padding: 0 1rem 1rem; font-size: 1rem; color: #555555; }
+    .link-btn {
+      display: inline-block;
+      margin-bottom: var(--space);
+      color: var(--clr-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .link-btn:hover { color: var(--clr-accent); }
+    footer { text-align: center; padding: var(--space) 0; background: var(--clr-primary); color: var(--clr-white); }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">La Esencia</a>
+        <ul class="nav-links">
+          <li><a href="hostal.html">Hostal</a></li>
+          <li><a href="restaurante.html">Restaurante</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero dinámico con iconos -->
+  <section class="index-hero">
+    <h1>Bienvenidos a La Esencia</h1>
+    <p>Donde el confort del hostal y la excelencia gastronómica se fusionan en experiencias inolvidables.</p>
+    <div class="hero-icons">
+      <div class="icon"><i class="material-icons">hotel</i></div>
+      <div class="icon"><i class="material-icons">restaurant</i></div>
+      <div class="icon"><i class="material-icons">people</i></div>
+      <div class="icon"><i class="material-icons">contact_mail</i></div>
+    </div>
+  </section>
+
+  <!-- Sección principal flotante -->
+  <div class="index-section">
+
+    <!-- Overview Cards -->
+    <section class="overview">
+      <div class="container cards">
+        <div class="card">
+          <img src="hostal-thumb.jpg" alt="Hostal La Esencia">
+          <h2>Hostal</h2>
+          <p>Habitaciones modernas y confortables diseñadas para tu descanso.</p>
+          <a href="hostal.html" class="link-btn">Más Info</a>
+        </div>
+        <div class="card">
+          <img src="restaurante-thumb.jpg" alt="Restaurante La Esencia">
+          <h2>Restaurante</h2>
+          <p>Sabores locales y creaciones gourmet en un ambiente elegante.</p>
+          <a href="restaurante.html" class="link-btn">Más Info</a>
+        </div>
+        <div class="card">
+          <img src="nosotros-thumb.jpg" alt="Equipo La Esencia">
+          <h2>Nosotros</h2>
+          <p>Conoce al equipo y la historia detrás de La Esencia.</p>
+          <a href="nosotros.html" class="link-btn">Más Info</a>
+        </div>
+        <div class="card">
+          <img src="contacto-thumb.jpg" alt="Contacto La Esencia">
+          <h2>Contacto</h2>
+          <p>Encuentra nuestra ubicación, datos de contacto y horarios.</p>
+          <a href="contacto.html" class="link-btn">Más Info</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container"><p>&copy; 2025 La Esencia. Todos los derechos reservados.</p></div>
+  </footer>
+</body>
+</html>
+
+
+
+
