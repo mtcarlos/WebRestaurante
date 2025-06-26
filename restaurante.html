@@ -178,19 +178,26 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">La Isleta</a>
-        <ul class="nav-links">
-          <li><a href="hostal.html">Hostal</a></li>
-          <li><a href="restaurante.html">Restaurante</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">La Isleta</a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
-  </header>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="hostal.html">Hostal</a></li>
+        <li><a href="restaurante.html">Restaurante</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
   <!-- Hero dinámico con iconos -->
   <section class="restaurant-hero">
@@ -258,5 +265,15 @@
       });
     });
   </script>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

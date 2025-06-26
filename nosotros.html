@@ -7,19 +7,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="container">
-        <a href="index.html" class="logo">La Isleta</a>
-        <ul class="nav-links">
-          <li><a href="hostal.html">Hostal</a></li>
-          <li><a href="restaurante.html">Restaurante</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">La Isleta</a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </nav>
-  </header>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="hostal.html">Hostal</a></li>
+        <li><a href="restaurante.html">Restaurante</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
   <main>
     <section class="section">
@@ -52,5 +59,15 @@
       <p>&copy; 2025 La Esencia. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

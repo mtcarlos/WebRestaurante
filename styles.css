@@ -295,4 +295,95 @@ footer {
   }
 }
 
+/* -----------------------------
+   HAMBURGER ICON
+   ----------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  border-radius: 100px;
+  background: var(--clr-white);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
+/* Transformación a “X” */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* -----------------------------
+   NAV LINKS (MÓVIL)
+   ----------------------------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: centre;
+    top: 100%;
+    left: 0;
+    width: 50%;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--clr-primary); /* ajusta según tu paleta */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: max-height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.active {
+    max-height: 900px; /* suficiente para todos los ítems */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    margin: 0.8rem 0;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+    color: var(--clr-white);
+    text-decoration: none;
+    transition: background 0.5s ease, transform 0.3s ease;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
+    
+    
+  }
+}
+
+/* -----------------------------
+   ANIMACIÓN DE SLIDE-DOWN (opcional)
+   ----------------------------- */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.nav-links.active {
+  animation: slideDown 0.4s ease forwards;
+}
