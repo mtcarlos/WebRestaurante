@@ -3,14 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nosotros - La Isleta</title>
+  <title>Nosotros - La Esencia</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Hero full-screen moderno */
+    .about-hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+            background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+
+    }
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+    .about-hero .hero-content {
+      position: relative;
+      color: var(--clr-white);
+      text-align: center;
+      max-width: 800px;
+      animation: fadeInUp 1s ease-out;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+       color: #ffffff;
+
+    }
+    .hero-scroll {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--clr-white);
+      border-radius: 50%;
+      position: relative;
+      animation: scrollIndicator 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: var(--clr-white);
+      border-radius: 50%;
+    }
+    @keyframes scrollIndicator {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Timeline centrado horizontal */
+    .timeline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin: 4rem 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 4px;
+      background: var(--clr-accent);
+      z-index: 1;
+    }
+    .timeline .event {
+      position: relative;
+      background: var(--clr-white);
+      padding: 2rem;
+      width: 260px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 16px rgba(0,35,73,0.1);
+      text-align: center;
+      z-index: 2;
+      font-family: 'Open Sans', sans-serif;
+      transition: transform 0.3s;
+    }
+    .timeline .event:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+    .timeline .event::before {
+      content: attr(data-year);
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--clr-accent);
+      color: var(--clr-white);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.9rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .event h3 {
+      margin: 1rem 0 0.5rem;
+      color: var(--clr-primary-700);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+    }
+    .event p {
+      font-size: 1rem;
+      color: var(--clr-grey-700);
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) {
+      .timeline {
+        flex-direction: column;
+      }
+      .timeline::before {
+        width: 4px;
+        height: calc(100% - 2rem);
+        top: 1rem;
+        left: 50%;
+      }
+      .timeline .event {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
+
+  <header>
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">La Isleta</a>
+      <a href="index.html" class="logo">La Isleta del Moro</a>
 
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -27,47 +170,44 @@
     </div>
   </nav>
 </header>
+  <!-- Hero moderno -->
+  <section class="about-hero" id="hero-nosotros">
+    <div class="hero-content">
+      <h1>Nuestra Historia</h1>
+      <p>Desde el icónico Bar Antonio en 1969 hasta la tercera generación, descubre cómo La Isleta del Moro ha evolucionado manteniendo viva la tradición y cercanía en Cabo de Gata.</p>
+      <a href="#timeline" class="hero-scroll" aria-label="Desplazar"></a>
+    </div>
+  </section>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1>Nosotros</h1>
-        <p>Fundada en 2018, La Esencia combina la hospitalidad de un hostal con la excelencia culinaria de un restaurante gourmet.</p>
-        <div class="staff">
-          <div class="card">
-            <img src="team1.jpg" alt="Ana Pérez - Gerente">
-            <h2>Ana Pérez</h2>
-            <p>Gerente</p>
-          <//div>
-          <div class="card">
-            <img src="team2.jpg" alt="Luis Gómez - Chef Ejecutivo">
-            <h2>Luis Gómez</h2>
-            <p>Chef Ejecutivo</p>
-          </div>
-          <div class="card">
-            <img src="team3.jpg" alt="María Ruiz - Recepción">
-            <h2>María Ruiz</h2>
-            <p>Recepción</p>
-          </div>
-        </div>
+  <!-- Timeline centrado horizontal -->
+  <section class="container" id="timeline">
+    <div class="timeline">
+      <div class="event" data-year="1969">
+        <h3>Bar Antonio</h3>
+        <p>Se inauguró como bar y tienda, convirtiéndose en el corazón social de La Isleta del Moro.</p>
       </div>
-    </section>
-  </main>
+      <div class="event" data-year="1985">
+        <h3>Restaurante & Pensión</h3>
+        <p>La familia expande el negocio, ofreciendo alojamiento y auténtica cocina casera.</p>
+      </div>
+      <div class="event" data-year="2025">
+        <h3>Tercera Generación</h3>
+        <p>Hoy, la tercera generación mantiene vivo el espíritu de hospitalidad en Cabo de Gata.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 La Esencia. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+<p>Aunque su historia comienza oficialmente en 1969, sus raíces se hunden más atrás, cuando en el corazón de La Isleta del Moro se abrió el entrañable Bar Antonio. Aquel lugar era mucho más que un bar: con una pequeña tienda, el único teléfono del pueblo y un ambiente festivo, se convirtió en punto de encuentro para los vecinos.</p>
+      <p>Con el paso de los años, aquel espacio evolucionó hasta convertirse en restaurante y pensión, ofreciendo alojamiento y la cocina tradicional de la zona: arroces, cuajaderas y sabores caseros elaborados con dedicación.</p>
+      <p>Hoy, la tercera generación de esta familia continúa al frente del negocio, manteniendo vivo el espíritu de hospitalidad y cercanía, en uno de los rincones más auténticos y bellos del Parque Natural de Cabo de Gata.</p>  </footer>
+
 
   <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-</script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('hamburger').classList.toggle('active');
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
