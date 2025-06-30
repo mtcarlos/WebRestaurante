@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - La Isleta del Moro</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome para iconos de redes sociales -->
+  <!-- Se corrige enlace eliminando atributos SRI para asegurar carga -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     :root {
@@ -108,13 +111,48 @@
       transform: scale(1.2);
       color: var(--clr-accent);
     }
+    /* Enlaces a redes sociales (solo iconos) */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space);
+      margin-top: var(--space);
+      animation: fadeInUp 1.2s ease-out both;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--clr-white);
+      color: var(--clr-primary);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 35, 73, 0.341);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    }
+    .social-links a:hover {
+      transform: translateY(-6px) scale(1.1);
+      background:linear-gradient(140deg, var(--clr-primary), var(--clr-accent));
+      color: var(--clr-white);
+      box-shadow: 0 6px 16px rgba(0, 35, 73, 0.729);
+    }
+    .social-links i {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .social-links a:hover i {
+      transform: scale(1.2);
+    }
     /* Mapa estilizado */
     .map-container {
-      border-radius: var(--radius);
+      border-radius: 50px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.673);
       animation: fadeInUp 1s ease-out both;
       animation-delay: 1s;
+      align-items: center;
     }
     .map-container iframe {
       width: 100%;
@@ -135,13 +173,11 @@
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="logo">La Isleta del Moro</a>
-
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
       <ul class="nav-links" id="nav-links">
         <li><a href="hostal.html">Hostal</a></li>
         <li><a href="restaurante.html">Restaurante</a></li>
@@ -163,21 +199,28 @@
     </div>
   </section>
 
-  <!-- Sección central con datos y mapa -->
+  <!-- Sección central con datos, redes sociales y mapa -->
   <section class="contact-section">
     <ul class="contact-info">
       <li><i class="material-icons">phone</i><strong>Teléfono:</strong> 950389713</li>
       <li><i class="material-icons">email</i><strong>Email:</strong> lailsletahotel@gmail.com</li>
       <li><i class="material-icons">place</i><strong>Dirección:</strong> C. Mohamed Arráez, 28.</li>
-      <li><i class="material-icons">schedule</i><strong>Horario: </strong> 9:00–00:00</li>
+      <li><i class="material-icons">schedule</i><strong>Horario:</strong> 9:00–00:00</li>
     </ul>
+    <div class="social-links">
+      <a href="https://www.instagram.com/laisletarestaurante/" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/LaIsletaRestaurante/" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1597.103098046355!2d-2.053216626984392!3d36.813578591220846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7aee8c1d74b135%3A0x4f2f7ba235df5228!2sC.%20Mohamed%20Arr%C3%A1ez%2C%2028%2C%2004118%20La%20Isleta%2C%20Almer%C3%ADa!5e0!3m2!1ses-419!2ses!4v1746980432076!5m2!1ses-419!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-        allowfullscreen="" loading="lazy"></iframe>
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1597.103098046355!2d-2.053216626984392!3d36.813578591220846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7aee8c1d74b135%3A0x4f2f7ba235df5228!2sC.%20Mohamed%20Arr%C3%A1ez%2C%2028%2C%2004118%20La%20Isleta%2C%20Almer%C3%ADa!5e0!3m2!1ses-419!2ses!4v1746980432076!5m2!1ses-419!2ses"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-
 
   <script>
   const hamburger = document.getElementById('hamburger');
