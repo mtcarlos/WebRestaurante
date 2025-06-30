@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostal - La Isleta</title>
+  <title>Hostal - La Isleta del Moro</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">La Isleta</a>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">La Isleta del Moro</a>
 
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="hostal.html" class="active">Hostal</a></li>
+          <li><a href="restaurante.html">Restaurante</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
       </div>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="hostal.html">Hostal</a></li>
-        <li><a href="restaurante.html">Restaurante</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
   <main>
-    <section class="section">
+    <!-- Hero Section -->
+    <section class="section hero">
       <div class="container">
         <h1>Hostal</h1>
-        <p>Disfruta de habitaciones modernas y confortables diseñadas para tu descanso.</p>
         <div class="gallery">
           <img src="hostal1.jpg" alt="Recepción del hostal">
           <img src="hostal2.jpg" alt="Habitación doble">
@@ -40,22 +40,80 @@
         </div>
       </div>
     </section>
+
+    <!-- Precios Estándar -->
+    <section class="section overview">
+      <div class="container">
+        <h2>Precios Estándar</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Habitación individual</h3>
+            <p>45 € por noche</p>
+          </div>
+          <div class="card">
+            <h3>Habitación doble</h3>
+            <p>80 € por noche</p>
+          </div>
+          <div class="card">
+            <h3>Habitación triple</h3>
+            <p>100 € por noche</p>
+          </div>
+          <div class="card">
+            <h3>Habitación cuádruple</h3>
+            <p>120 € por noche</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Régimen -->
+    <section class="section overview">
+      <div class="container">
+        <h2>Régimen</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Media pensión</h3>
+            <p>60 € por persona<br><small>(noche + desayuno + cena)</small></p>
+          </div>
+          <div class="card">
+            <h3>Pensión completa</h3>
+            <p>70 € por persona<br><small>(noche + desayuno + comida + cena)</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información Pensión -->
+    <section class="section">
+      <div class="container">
+        <h2>Pensión</h2>
+        <ul class="contact-info">
+          <li><strong>Salida:</strong> Dejar la habitación antes de las 12:00.</li>
+          <li><strong>Apertura:</strong> 9:00 (desayuno) hasta las 12:00.</li>
+          <li>Para acceder fuera del horario, consultar en recepción o contactar al teléfono: <a href="tel:950389713">950 389 713</a>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Horario Establecimiento -->
+    <section class="section">
+      <div class="container">
+        <h2>Horario del establecimiento</h2>
+        <p>Abierto todos los días de <strong>9:00</strong> a <strong>00:00</strong>.</p>
+        <p>Reservas de habitaciones y pensión únicamente por teléfono: <a href="tel:950389713">950 389 713</a>. Llámanos y pregunta disponibilidad sin problema. ¡Te esperamos!</p>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 La Esencia. Todos los derechos reservados.</p>
-    </div>
-  </footer>
 
   <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-</script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
