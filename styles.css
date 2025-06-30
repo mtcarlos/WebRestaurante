@@ -557,7 +557,12 @@ footer {
   background: var(--clr-primary);
   color: var(--clr-white);
   text-align: center;
-  padding: var(--space) 0;
+  padding: 2.5rem;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
 }
 
 
