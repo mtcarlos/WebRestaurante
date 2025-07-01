@@ -103,9 +103,11 @@
       z-index: 2;
       font-family: 'Open Sans', sans-serif;
       transition: transform 0.3s;
+      
     }
     .timeline .event:hover {
       transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 35, 73, 0.408);
     }
     .timeline .event::before {
       content: attr(data-year);
@@ -113,13 +115,14 @@
       top: -1.5rem;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--clr-accent);
+      background: var(--clr-primary);
       color: var(--clr-white);
       padding: 0.5rem 1rem;
-      border-radius: var(--radius);
+      border-radius: 50px;
       font-weight: 600;
       font-size: 0.9rem;
       font-family: 'Playfair Display', serif;
+
     }
     .event h3 {
       margin: 1rem 0 0.5rem;
