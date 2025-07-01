@@ -7,14 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
-    :root {
-      --clr-primary: #002349;
-      --clr-accent: #957C3D;
-      --clr-light: #f5f5f5;
-      --clr-white: #ffffff;
-      --radius: 8px;
-      --space: 1.5rem;
-    }
+ 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -61,6 +54,15 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    .hero-icons .icon:hover {
+      transform: translateY(-8px) scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+      color: var(--clr-white);
+    }
+
+
     .hero-icons .icon:nth-child(1) { animation-delay: 0.2s; }
     .hero-icons .icon:nth-child(2) { animation-delay: 0.4s; }
     .hero-icons .icon:nth-child(3) { animation-delay: 0.6s; }
