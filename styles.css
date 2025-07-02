@@ -234,7 +234,10 @@ header {
   gap: var(--space);
   text-align: center;
   align-items: center;
+
 }
+
+
 
 .overview .card {
   background: var(--clr-white);

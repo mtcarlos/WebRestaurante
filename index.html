@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
+
+
  
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
+    body { 
+      margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
     /* Hero dinámico */
     .index-hero {
 background: url('fondomar.jpg') center/cover no-repeat;      color: var(--clr-white);
@@ -72,14 +75,17 @@ background: url('fondomar.jpg') center/cover no-repeat;      color: var(--clr-wh
     /* Sección flotante */
     .index-section {
       max-width: 1000px;
-      background: var(--clr-white);
+      background: rgba(255, 255, 255, 0.32);
+      backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
       margin: -4rem auto 2rem;
       padding: var(--space);
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(0, 35, 73, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 35, 73, 0.378);
       position: relative;
       z-index: 2;
       animation: fadeInUp 1s ease-out both;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
     /* ... resto del CSS ... */
   </style>
@@ -127,7 +133,10 @@ background: url('fondomar.jpg') center/cover no-repeat;      color: var(--clr-wh
       display: flex;
       justify-content: center;
       align-items: center;
+
     }
+
+ 
   </style>
   
 </head>
