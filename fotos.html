@@ -1,31 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Expanding Cards</title>
+    <title>Galería de Tarjetas Expandibles</title>
+    <!-- Estilos adicionales para colocar el header encima -->
+    <style>
+      body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        overflow: auto;
+        
+        padding: 20px;
+        text-align: center;
+      }
+      .container {
+        margin-top: 30px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Explore The World</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Wild Forest</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80')">
-        <h3>Sunny Beach</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')">
-        <h3>City on Winter</h3>
-      </div>
-      <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        <h3>Mountains - Clouds</h3>
-      </div>
+    <!-- Encabezado con título y enlace a inicio -->
+    <header class="site-header">
+      <h1>Nuestras Fotos</h1>
+      <p>Explora nuestra selección de imágenes haciendo clic en cada tarjeta para expandirla y descubrir más detalles.</p>
 
-    </div>
 
+
+    </header>
+
+    <!-- Sección de introducción -->
+    <section id="intro" class="intro-text">
+      
+      <p>Coloque el dispositivo en posición horizontal para una mejor experiencia</p>
+    </section>
+    <button class="home-btn" onclick="location.href='index.html'" aria-label="Volver a inicio">
+    <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+      <path d="M280.37 148.26L96 300.11V464a16 16 0 0016 16l112-.29a16 16 0 0016-16V368a16 16 0 0116-16h64a16 16 0 0116 16v95.72a16 16 0 0016 16l112 .29a16 16 0 0016-16V300L295.67 148.26a12.19 12.19 0 00-15.3 0zM571.6 251.47L488 182.6V44a12 12 0 00-12-12h-56a12 12 0 00-12 12v72.61L318.47 43a48 48 0 00-61 0L4.34 251.47a12 12 0 00-1.6 16.9l25.5 31a12 12 0 0016.9 1.6L64 270.69V464a48 48 0 0048 48h112a48 48 0 0048-48V368h64v96a48 48 0 0048 48h112a48 48 0 0048-48V270.7l19.9 17.3a12 12 0 0016.9-1.6l25.5-31a12 12 0 00-1.7-16.93z"/>
+    </svg>
+    </button>
+    <!-- Contenedor de tarjetas expandibles -->
+    <main>
+      <div class="container">
+        <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+          <h3>Explora el Mundo</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+          <h3>Bosque Salvaje</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80')">
+          <h3>Playa Soleada</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')">
+          <h3>Ciudad en Invierno</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+          <h3>Montañas y Nubes</h3>
+        </div>
+      </div>
+    </main>
+
+
+
+    <!-- Lógica de interacción -->
     <script src="script.js"></script>
   </body>
 </html>
