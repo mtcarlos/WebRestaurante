@@ -15,8 +15,7 @@
     body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
     /* Hero dinámico */
     .index-hero {
-      background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
-      color: var(--clr-white);
+background: url('fondomar.jpg') center/cover no-repeat;      color: var(--clr-white);
       text-align: center;
       padding: 6rem 1rem;
       overflow: hidden;
@@ -81,12 +80,59 @@
     }
     /* ... resto del CSS ... */
   </style>
+
+   <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
+    .dynamic-link {
+      display: inline-flex;
+      align-items: center;
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+      text-decoration: none;
+      animation: fadeInUp 0.8s ease-out both;
+      transition: background 0.5s;
+    }
+    .dynamic-link i:first-child {
+      margin-right: 0.5rem;
+      animation: bounce 1.5s infinite;
+    }
+    .dynamic-link i:last-child {
+      margin-left: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .dynamic-link:hover {
+      background: var(--clr-white);
+      color: var(--clr-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.803);
+      transform: scale(1.2);
+
+    }
+
+        /* Centrar el botón en la sección overview */
+    .overview .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  
 </head>
 <body>
 <header>
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">La Isleta del Moro</a>
+      <a href="index.html" class="bodoni-moda-sc">La Isleta del Moro</a>
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
@@ -117,33 +163,14 @@
   <!-- Sección principal flotante -->
   <div class="index-section">
 
-    <!-- Overview Cards -->
+    <!-- Overview Fotos -->
     <section class="overview">
-      <div class="container cards">
-        <div class="card">
-          <img src="hostal-thumb.jpg" alt="Hostal La Isleta del Moro">
-          <h2>Hostal</h2>
-          <p>Habitaciones tradicionales y confortables diseñadas para tu descanso.</p>
-          <a href="hostal.html" class="link-btn">Más Info</a>
-        </div>
-        <div class="card">
-          <img src="restaurante-thumb.jpg" alt="Restaurante La Isleta del Moro">
-          <h2>Restaurante</h2>
-          <p>Sabores locales y creaciones gourmet en un ambiente familiar a la vista del mar.</p>
-          <a href="restaurante.html" class="link-btn">Más Info</a>
-        </div>
-        <div class="card">
-          <img src="nosotros-thumb.jpg" alt="Historia La Isleta del Moro">
-          <h2>Nosotros</h2>
-          <p>Conoce la historia detrás de La Isleta del Moro.</p>
-          <a href="nosotros.html" class="link-btn">Más Info</a>
-        </div>
-        <div class="card">
-          <img src="contacto-thumb.jpg" alt="Contacto La Isleta del Moro">
-          <h2>Contacto</h2>
-          <p>Encuentra nuestra ubicación, datos de contacto y horarios.</p>
-          <a href="contacto.html" class="link-btn">Más Info</a>
-        </div>
+      <div class="container">
+        <a href="fotos.html" class="dynamic-link">
+          <i class="material-icons">photo_library</i>
+          <span>Ver Fotos del Local</span>
+          <i class="material-icons">arrow_forward</i>
+        </a>
       </div>
     </section>
   </div>
