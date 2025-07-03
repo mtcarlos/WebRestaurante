@@ -148,6 +148,42 @@ header {
   
 }
 
+.index-hero {
+  position: relative;
+  background: url('recursos/¿Portada_de_algún_apartado_.jpg') center/cover no-repeat;
+  /* aplicamos un filtro ligero por defecto */
+  filter: brightness(0.95);
+  padding: 6rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+.index-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.185);
+  z-index: 1;
+}
+.index-hero h1,
+.index-hero p,
+.index-hero .hero-icons {
+  position: relative;
+  z-index: 2;
+}
+.index-hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.7);
+  animation: fadeInUp 0.6s ease-out both;
+}
+.index-hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+
 /* Sections */
 .section {
   background: var(--clr-white);
