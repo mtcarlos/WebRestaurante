@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Tipografías elegantes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -40,7 +42,13 @@
     <div class="hero-content container">
       <h1>Restaurante</h1>
       <p>En Restaurante Pensión La Isleta apostamos por una cocina con raíces, donde el respeto al producto y el sabor auténtico son los protagonistas.</p>
-      <a href=fotosrestaurante.html class="btn btn-primary">Ver fotos</a>
+      <div class="container">
+<div class="toggle" onclick="location.href='fotosrestaurante.html';" style="cursor:pointer;">
+  <input type="checkbox">
+  <span class="button"></span>
+  <span class="material-icons label">photo_camera</span>
+</div>
+
     </div>
   </section>
 
