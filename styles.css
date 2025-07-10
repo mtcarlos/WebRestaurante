@@ -3,8 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Fleur+De+Leah&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Fleur+De+Leah&display=swap');
 
-@import compass;
+
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz@1,6..96&family=Bodoni+Moda:opsz@6..96&family=Fleur+De+Leah&family=Rock+Salt&display=swap');
+
 
 :root {
   --clr-primary: #0E2148; /* Azul principal */
@@ -13,6 +16,13 @@
   --clr-white: #ffffff;
   --radius: 8px;
   --space: 1.5rem;
+}
+
+.rock-salt-regular {
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+  font-style: normal;
+  
 }
 
 .fleur-de-leah-regular {
@@ -153,12 +163,13 @@ header {
 
 .index-hero {
   position: relative;
-  background: url('recursos/¿Portada_de_algún_apartado_.jpg') center/cover no-repeat;
+  background:#002349 ;
   /* aplicamos un filtro ligero por defecto */
   filter: brightness(0.95);
   padding: 6rem 1rem;
   text-align: center;
   color: #fff;
+  font-family: "Rock Salt", cursive;
 }
 .index-hero::before {
   content: "";
@@ -173,11 +184,13 @@ header {
   position: relative;
   z-index: 2;
 }
+
 .index-hero h1 {
   font-size: 3.5rem;
   letter-spacing: 2px;
   text-shadow: 0 4px 6px rgba(0,0,0,0.7);
   animation: fadeInUp 0.6s ease-out both;
+  
 }
 .index-hero p {
   max-width: 600px;

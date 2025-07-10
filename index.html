@@ -18,7 +18,7 @@
       margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--clr-light); color: var(--clr-primary); }
     /* Hero dinámico */
     .index-hero {
-      background: url('recursos/¿Portada\ de\ algún\ apartado_.jpg') center/cover no-repeat;      color: var(--clr-white);
+      background: var(--clr-primary);
       text-align: center;
       padding: 6rem 1rem;
       overflow: hidden;
@@ -30,6 +30,7 @@
       letter-spacing: 2px;
       animation: fadeInUp 0.6s ease-out both;
       color: rgb(255, 255, 255);
+      
 
     }
     .index-hero p {
@@ -43,10 +44,17 @@
       justify-content: center;
       gap: var(--space);
       margin-top: var(--space);
+      transition: background-color 0.7s ease,
+              transform 0.7s ease;
+    }
+
+       .hero-icons:hover {
+     transform: scale(1.2) ;
+     
     }
     .hero-icons .icon {
-      background: var(--clr-white);
-      color: var(--clr-primary);
+      background: var(--clr-primary);
+      color: var(--clr-white);
       border-radius: 50%;
       width: 60px;
       height: 60px;
@@ -60,13 +68,14 @@
     }
 
     .hero-icons .icon:hover {
-      background: rgba(255, 255, 255, 0.49);
+      background: rgba(255, 255, 255, 0.16);
       border-radius: 50px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.678);
+      box-shadow: 0 0px 20px rgba(0, 0, 0, 0.732);
       backdrop-filter: blur(8.5px);
-      -webkit-backdrop-filter: blur(8.5px);
-      border: 1px solid rgba(255, 255, 255, 1);
-      color: var(--clr-white);
+      -webkit-backdrop-filter: blur(10.5px);
+      border: 1px solid rgb(16, 1, 80);
+      color: var(--clr-primary);
+      
     }
 
 
@@ -135,6 +144,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      gap: 3rem;
+      
+
+      
 
     }
 
@@ -164,14 +178,9 @@
 
   <!-- Hero dinámico con iconos -->
   <section class="index-hero">
-    <h1>Bienvenidos a La Isleta del Moro</h1>
+    <h1 class="rock-salt-regular">Bienvenidos a La Isleta del Moro</h1>
     <p>Prueba a dormir con el sonido del mar</p>
-    <div class="hero-icons">
-      <a href="hostal.html" class="icon" aria-label="Hostal"><i class="material-icons">hotel</i></a>
-      <a href="restaurante.html" class="icon" aria-label="Restaurante"><i class="material-icons">restaurant</i></a>
-      <a href="nosotros.html" class="icon" aria-label="Conócenos"><i class="material-icons">people</i></a>
-      <a href="contacto.html" class="icon" aria-label="Contacto"><i class="material-icons">contact_mail</i></a>
-    </div>
+ 
   </section>
 
   <!-- Sección principal flotante -->
@@ -180,11 +189,19 @@
     <!-- Overview Fotos -->
     <section class="overview">
       <div class="container">
+            <div class="hero-icons">
+      <a href="hostal.html" class="icon" aria-label="Hostal"><i class="material-icons">hotel</i></a>
+      <a href="restaurante.html" class="icon" aria-label="Restaurante"><i class="material-icons">restaurant</i></a>
+      <a href="nosotros.html" class="icon" aria-label="Conócenos"><i class="material-icons">people</i></a>
+      <a href="contacto.html" class="icon" aria-label="Contacto"><i class="material-icons">contact_mail</i></a>
+    </div>
+        <div>
         <a href="fotos.html" class="dynamic-link">
           <i class="material-icons">photo_library</i>
           <span>Ver Fotos del Local</span>
           <i class="material-icons">arrow_forward</i>
         </a>
+        </div>
       </div>
     </section>
   </div>
