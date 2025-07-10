@@ -5,20 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería de Fotos - Restaurante</title>
   <!-- AOS Animations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz@1,6..96&family=Bodoni+Moda:opsz@6..96&family=Fleur+De+Leah&family=Rock+Salt&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root {
+      /* Espaciado */
       --gap: 1rem;
-      --bg-color: #fafafa;
-      --overlay-bg: rgba(0, 0, 0, 0.8);
-      --btn-bg: #333;
-      --btn-color: #fff;
-      --transition: 0.3s ease;
+      /* Fondo general: arena suave */
+      --bg-color: #e9dccd;
+      /* Fondo de overlay: azul marino translúcido */
+      --overlay-bg: rgba(10, 37, 64, 0.9);
+      /* Botones fondo: azul marino profundo */
+      --btn-bg: #0a2540;
+      /* Botones texto: crema cálido */
+      --btn-color: #f5f1ed;
+      /* Color de acento: verde agua marina */
+      --accent-color: #ffffff;
+      /* Transición más suave */
+      --transition: 0.5s ease;
     }
+
+    
+.bodoni-moda-sc{
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #333;
+      background-color: var(--bg-color);
       color: #222;
       display: flex;
       flex-direction: column;
@@ -27,7 +46,7 @@
     .header {
       padding: var(--gap);
       text-align: center;
-      background: #333;
+      background: var(--btn-bg);
       z-index: 10;
     }
     .btn-back {
@@ -36,21 +55,28 @@
       justify-content: center;
       margin-bottom: var(--gap);
       padding: 0.5rem;
-      background-color: #222;
-      color: var(--btn-color);
+      background-color: var(--accent-color);
+      color: var(--btn-bg);
       text-decoration: none;
       border-radius: 50px;
       transition: background-color var(--transition);
+      transition: transofrm 0.5s;
       width: 2.5rem;
       height: 2.5rem;
     }
     .btn-back:hover {
-      background-color: #555;
+      background-color: rgba(255, 255, 255, 0.796);
+      
+      box-shadow: 0 0px 20px rgba(255, 255, 255, 0.732);
+      backdrop-filter: blur(8.5px);
+      -webkit-backdrop-filter: blur(10.5px);
+      border: 3px solid rgb(255, 255, 255);
+      
     }
     .btn-back svg {
       width: 1.25rem;
       height: 1.25rem;
-      fill: var(--btn-color);
+      fill: var(--btn-bg);
     }
     .sr-only {
       position: absolute;
@@ -62,6 +88,32 @@
       clip: rect(0,0,0,0);
       white-space: nowrap;
       border: 0;
+    }
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--gap);
+      background: var(--btn-bg);
+      padding: var(--gap);
+    }
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      color: var(--btn-bg);
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color var(--transition);
+      transition: transform var(--transition);
+      border-radius: 50px;
+      font-family: "Bodoni Moda SC", serif;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background-color: var(--btn-bg);
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255);
+      transform: translateY(-4px);
     }
     .gallery {
       display: grid;
@@ -81,6 +133,7 @@
       display: block;
       transition: transform var(--transition);
       border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .gallery-item:hover img {
       transform: scale(1.05);
@@ -107,7 +160,7 @@
       max-width: 90%;
       max-height: 90%;
       border-radius: 0.5rem;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 1rem rgba(10, 37, 64, 0.8);
       touch-action: none;
     }
     .lightbox-close {
@@ -115,11 +168,15 @@
       top: 1rem;
       right: 1rem;
       font-size: 2rem;
-      color: #fff;
+      color: var(--accent-color);
       background:none;
       border: none;
       cursor: pointer;
       border-radius: 50px;
+      transition: color var(--transition);
+    }
+    .lightbox-close:hover {
+      color: #f5f1ed;
     }
   </style>
 </head>
@@ -131,14 +188,21 @@
       </svg>
     </a>
   </header>
+  <!-- Navegación de Secciones -->
+  <div class="gallery-nav">
+    <button class="filter-btn active" data-filter="restaurante">Restaurante</button>
+    <button class="filter-btn" data-filter="platos">Platos</button>
+  </div>
+  <!-- Galería -->
   <main class="gallery">
-    <!-- Ejemplo de items con animación AOS -->
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="fotosweb/IMG_9583.jpg" alt="Plato 1"></div>
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="recursos/IMG_9568.jpg" alt="Plato 2"></div>
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="recursos/IMG_9583.jpg" alt="Interior del restaurante"></div>
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="fotosweb/IMG_9570.jpg" alt="Cócteles"></div>
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="500"><img src="fotosweb/IMG_9574.jpg" alt="Postres"></div>
-    <div class="gallery-item" data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9580.jpg" alt="Detalle de la mesa"></div>
+    <!-- Sección Restaurante -->
+    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="100"><img src="fotosweb/IMG_9583.jpg" alt="Interior del restaurante"></div>
+    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="400"><img src="fotosweb/IMG_9570.jpg" alt="Cócteles"></div>
+    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9580.jpg" alt="Detalle de la mesa"></div>
+    <!-- Sección Platos -->
+    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="200"><img src="recursos/IMG_9568.jpg" alt="Plato 1"></div>
+    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="300"><img src="recursos/IMG_9583.jpg" alt="Plato 2"></div>
+    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="500"><img src="fotosweb/IMG_9574.jpg" alt="Postres"></div>
   </main>
 
   <!-- Lightbox -->
@@ -156,6 +220,8 @@
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
     let startX = 0;
+
+    // Funcionalidad Lightbox
     galleryItems.forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
@@ -190,6 +256,24 @@
         lightboxImg.src = galleryItems[idx].src;
         lightboxImg.alt = galleryItems[idx].alt;
       }
+    });
+
+    // Filtrado de Secciones
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          item.style.display = item.dataset.category === filter ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Mostrar solo Restaurante por defecto
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.style.display = item.dataset.category === 'restaurante' ? 'block' : 'none';
     });
   </script>
 </body>
