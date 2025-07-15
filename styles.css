@@ -112,12 +112,13 @@ header {
   color: var(--clr-white);
   text-decoration: none;
   transition: color 0.3s;
+  transition: transform 0.5s;
 }
 
 .logo:hover {
   color: var(--clr-accent);
   transform: scale(1.05) translate(-3px);
-  transition: 0.5s;
+  
 }
 
 .nav-links {
@@ -565,6 +566,13 @@ body {
   display: flex;
   align-items: center;
 }
+
+.resto-hero p {
+font-family: 'Playfair Display', serif;
+}
+
+
+
 .hero-overlay {
   position: absolute;
   inset: 0;

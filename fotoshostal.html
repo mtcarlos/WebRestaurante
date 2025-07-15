@@ -182,7 +182,7 @@
 </head>
 <body>
   <header class="header">
-    <a href="restaurante.html" class="btn-back" aria-label="Volver al restaurante">
+    <a href="hostal.html" class="btn-back" aria-label="Volver al Hostal">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
       </svg>
@@ -190,23 +190,33 @@
   </header>
   <!-- Navegación de Secciones -->
   <div class="gallery-nav">
-    <button class="filter-btn active" data-filter="restaurante">Restaurante</button>
-    <button class="filter-btn" data-filter="platos">Platos</button>
+    <button class="filter-btn active" data-filter="restaurante">Hostal</button>
   </div>
   <!-- Galería -->
   <main class="gallery">
     <!-- Sección Restaurante -->
-    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="100"><img src="fotosweb/IMG_9583.jpg" alt="Interior del restaurante"></div>
-    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="400"><img src="fotosweb/IMG_9570.jpg" alt="Cócteles"></div>
-    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9580.jpg" alt="Detalle de la mesa"></div>
-        <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="200"><img src="recursos/IMG_9568.jpg" alt="Plato 1"></div>
-    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="300"><img src="recursos/IMG_9583.jpg" alt="Plato 2"></div>
-    <div class="gallery-item" data-category="restaurante" data-aos="fade-up" data-aos-delay="500"><img src="fotosweb/IMG_9574.jpg" alt="Postres"></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="100"><img src="fotosweb/IMG_0323.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="400"><img src="fotosweb/IMG_0339.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_0340.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_0343.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_0340.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9503.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9506.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9517.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9520.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9525.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9526.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9527.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9533.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9538.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9541.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9545.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9550.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_9559.jpg" alt=""></div>
+    <div class="gallery-item"  data-aos="fade-up" data-aos-delay="600"><img src="fotosweb/IMG_0343.jpg" alt=""></div>
+
+
     
-    <!-- Sección Platos -->
-    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="200"><img src="recursos/IMG_9568.jpg" alt="Plato 1"></div>
-    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="300"><img src="recursos/IMG_9583.jpg" alt="Plato 2"></div>
-    <div class="gallery-item" data-category="platos" data-aos="fade-up" data-aos-delay="500"><img src="fotosweb/IMG_9574.jpg" alt="Postres"></div>
   </main>
 
   <!-- Lightbox -->
@@ -262,23 +272,7 @@
       }
     });
 
-    // Filtrado de Secciones
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.gallery-item').forEach(item => {
-          item.style.display = item.dataset.category === filter ? 'block' : 'none';
-        });
-      });
-    });
-
-    // Mostrar solo Restaurante por defecto
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.style.display = item.dataset.category === 'restaurante' ? 'block' : 'none';
-    });
+   
   </script>
 </body>
 </html>
